@@ -3,7 +3,7 @@ import VideoFooter from './VideoFooter';
 import VideoSidebar from './VideoSidebar';
 import "./Video.css";
 
-function Video() {
+function Video({ url, username, description, song, likes, comments, shares }) {
   const [playing, setPlaying] = useState(false)
   const videoRef = useRef(null);
 
@@ -24,14 +24,20 @@ function Video() {
         className='video__player'
         loop
         ref={videoRef}
-        src='https://vids.me.me/sunnytheunfunny-revenant-mp4-source-dasspaghettimonster-feniczoroark-plaidsquid41030-ahunkahunkaburninlove-artsyjasper105-doodlin-doods-72541057.mp4'
+        src={url}
         ></video>
 
-      {/* VideoFooter */}
-      <VideoFooter />
-      
-      {/* VideoSidebar */}
-      <VideoSidebar />
+      <VideoFooter 
+      username={username} 
+      description={description} 
+      song={song} 
+      />
+
+      <VideoSidebar 
+      likes={likes} 
+      comments={comments} 
+      shares={shares} 
+      />
     </div>
   );
 }
