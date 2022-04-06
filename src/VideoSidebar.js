@@ -26,7 +26,7 @@ function VideoSidebar({ likes, comments, shares }) {
           onClick={(e) => setLiked(true)} 
           />
         )}
-        <p>{liked ? likes + 1 : likes}</p>
+        <p>{liked ? (parseInt(likes) + 1).toString() : likes}</p>
       </div>
       <div className="videoSidebar__button">
         <ChatOutlinedIcon fontSize='large' />
